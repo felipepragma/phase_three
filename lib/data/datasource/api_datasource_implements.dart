@@ -23,18 +23,36 @@ class ApiDatasourceImplements extends ApiDatasourceInterface {
 
   ApiDatasourceImplements({required http.Client client}) : _client = client;
   
+  /// Get all products is a future method.
+  ///
+  /// Return a Either class
+  /// [ApiError] : Return error to api call
+  /// [List<ProductModel>] Return succes of list products
   @override
   Future<Either<ApiError, List<ProductModel>>> getAllProducts() async {
     final response = get(ApiUrlBase.getAllProducts, _client, (json) => LisProductsMapper().productsModelFromMap(json));
     return response;
   }
 
+  /// Get product by id is a future method.
+  /// 
+  /// Parameter
+  /// [id] : id product
+  ///
+  /// Return a Either class
+  /// [ApiError] : Return error to api call
+  /// [ProductModel] Return succes of one product
   @override
   Future<Either<ApiError, ProductModel>> getProductById(int id) async {
     final response = get(ApiUrlBase.getProductById(id), _client, (json) => ProductModel().fromJson(json));
     return response;
   }
 
+  /// Get all categories of product is a future method.
+  ///
+  /// Return a Either class
+  /// [ApiError] : Return error to api call
+  /// [List<String>] Return succes of list products
   @override
   Future<Either<ApiError, List<String>>> getCategories() {
     final response = get(ApiUrlBase.getCategories, _client, (json) => ListCategoriesMapper().categoriesModelFromMap(json));

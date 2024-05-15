@@ -23,16 +23,34 @@ class ApiRepositoryImplements extends ApiRepositoryInterface {
     _dataSourceInterface = dataSourceInterface ?? ApiDatasourceImplements(client: http.Client());
   }
 
+  /// Get all products is a future method.
+  ///
+  /// Return a Either class
+  /// [ApiError] : Return error to api call
+  /// [List<ProductModel>] Return succes of list products
   @override
   Future<Either<ApiError, List<ProductModel>>> getAllProducts() async {
     return _dataSourceInterface.getAllProducts();
   }
 
+  /// Get product by id is a future method.
+  /// 
+  /// Parameter
+  /// [id] : id product
+  ///
+  /// Return a Either class
+  /// [ApiError] : Return error to api call
+  /// [ProductModel] Return succes of one product
   @override
   Future<Either<ApiError, ProductModel>> getProductById(int id) async {
     return _dataSourceInterface.getProductById(id);
   }
 
+  /// Get all categories of product is a future method.
+  ///
+  /// Return a Either class
+  /// [ApiError] : Return error to api call
+  /// [List<String>] Return succes of list products
   @override
   Future<Either<ApiError, List<String>>> getCategories() {
     return _dataSourceInterface.getCategories();
