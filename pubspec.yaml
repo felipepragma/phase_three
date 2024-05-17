@@ -1,7 +1,6 @@
 name: api_call_package
 description: "Package project for call api fakestoreapi."
 version: 0.0.2
-homepage:
 
 environment:
   sdk: '>=3.3.3 <4.0.0'
