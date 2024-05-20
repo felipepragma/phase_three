@@ -30,7 +30,7 @@ How to import the package.
 How use the package.
 
 ```bash
-  final getAllProducts = await api_call_package.ApiCall().getAllProducts();
+  final getAllProducts = await api_call_package.ApiCall.getAllProducts();
   getAllProducts.fold(
     (error) => print('Error api call: $error'),
     (success) => print('List Products: $success'),
@@ -45,7 +45,7 @@ Entry point class ApiCall() all methods return a Either class of dartz package
 #### Get all products method
 
 ```dart
-   ApiCall().getAllProducts()
+   ApiCall.getAllProducts()
 ```
 
 | Return Object | Type     | Description                       |
@@ -56,7 +56,7 @@ Entry point class ApiCall() all methods return a Either class of dartz package
 #### Get product by id
 
 ```dart
-  ApiCall().getProductById(id)
+  ApiCall.getProductById(id)
 ```
 | Return Object | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
@@ -66,7 +66,7 @@ Entry point class ApiCall() all methods return a Either class of dartz package
 #### Get categories
 
 ```dart
-  ApiCall().getCategories()
+  ApiCall.getCategories()
 ```
 | Return Object | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
