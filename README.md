@@ -40,7 +40,7 @@ How use the package.
 
 ## Package Documentation
 
-Entry point class ApiCall() all methods return a Either class of dartz package
+Entry point class ApiCall all methods return a Either class of dartz package
 
 #### Get all products method
 
